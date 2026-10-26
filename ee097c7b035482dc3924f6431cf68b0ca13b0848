@@ -1,0 +1,3 @@
+- The final batch tree passes ./gradlew --no-daemon test lint :app:lintCoexistence :app:lintRelease :app:assembleDebug :app:assembleRelease: 533 tests complete with zero failures, errors, or skips, and all three app variants pass lint.
+- Robolectric exercises the bundled keyboard at phone and tablet widths, Ctrl chords, long-press AltGr, slide selection, cursor dragging, configuration reload, and sanitized speech insertion. Physical touch and Android speech services remain unverified.
+- All ten generated debug/release APKs contain keyboard JSON and schema bytes matching source, with three native libraries per ABI. Android aapt reads both universal APKs as com.termux, and apksigner verifies the debug universal APK.
