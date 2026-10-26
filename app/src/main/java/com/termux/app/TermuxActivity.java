@@ -1,5 +1,6 @@
 package com.termux.app;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
@@ -9,6 +10,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -46,6 +49,8 @@ import com.termux.shared.termux.settings.preferences.TermuxAppSharedPreferences;
 import com.termux.app.terminal.TermuxSessionsListViewController;
 import com.termux.app.terminal.io.TerminalToolbarViewPager;
 import com.termux.app.terminal.TermuxTerminalViewClient;
+import com.termux.app.terminal.keyboard.settings.KeyboardPreferences;
+import com.termux.app.terminal.keyboard.view.TerminalInputHostController;
 import com.termux.shared.termux.extrakeys.ExtraKeysView;
 import com.termux.shared.termux.interact.TextInputDialogUtils;
 import com.termux.shared.logger.Logger;
@@ -62,6 +67,9 @@ import com.termux.view.TerminalViewClient;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
@@ -174,6 +182,8 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     private int mNavBarHeight;
 
     private float mTerminalToolbarDefaultHeight;
+    private TerminalInputHostController mTerminalInputHostController;
+    private ActivityResultLauncher<String> mSpeechPermissionLauncher;
 
 
     private static final int CONTEXT_MENU_SELECT_URL_ID = 0;
@@ -213,6 +223,12 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
 
         super.onCreate(savedInstanceState);
 
+        mSpeechPermissionLauncher =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted -> {
+                if (mTerminalInputHostController != null)
+                    mTerminalInputHostController.onMicrophonePermissionResult(granted);
+            });
+
         setContentView(R.layout.activity_termux);
 
         // Load termux shared preferences
@@ -244,6 +260,8 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         setTermuxTerminalViewAndClients();
 
         setTerminalToolbarView(savedInstanceState);
+
+        mTerminalInputHostController = new TerminalInputHostController(this);
 
         setSettingsButtonView();
 
@@ -315,11 +333,26 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         if (mTermuxTerminalViewClient != null)
             mTermuxTerminalViewClient.onResume();
 
+        if (mTerminalInputHostController != null) mTerminalInputHostController.refreshMode();
+
         // Check if a crash happened on last run of the app or if a plugin crashed and show a
         // notification with the crash details if it did
         TermuxCrashUtils.notifyAppCrashFromCrashLogFile(this, LOG_TAG);
 
         mIsOnResumeAfterOnCreate = false;
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (mTerminalInputHostController != null)
+            mTerminalInputHostController.configurationChanged();
+    }
+
+    @Override
+    protected void onPause() {
+        if (mTerminalInputHostController != null) mTerminalInputHostController.reset();
+        super.onPause();
     }
 
     @Override
@@ -338,6 +371,8 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         if (mTermuxTerminalViewClient != null)
             mTermuxTerminalViewClient.onStop();
 
+        if (mTerminalInputHostController != null) mTerminalInputHostController.reset();
+
         removeTermuxActivityRootViewGlobalLayoutListener();
 
         unregisterTermuxActivityBroadcastReceiver();
@@ -349,6 +384,11 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         super.onDestroy();
 
         Logger.logDebug(LOG_TAG, "onDestroy");
+
+        if (mTerminalInputHostController != null) {
+            mTerminalInputHostController.close();
+            mTerminalInputHostController = null;
+        }
 
         if (mIsInvalidState) return;
 
@@ -584,7 +624,10 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
 
     private void setToggleKeyboardView() {
         findViewById(R.id.toggle_keyboard_button).setOnClickListener(v -> {
-            mTermuxTerminalViewClient.onToggleSoftKeyboardRequest();
+            if (mTerminalInputHostController != null && mTerminalInputHostController.isBuiltIn())
+                mTerminalInputHostController.toggle();
+            else
+                mTermuxTerminalViewClient.onToggleSoftKeyboardRequest();
             getDrawer().closeDrawers();
         });
 
@@ -623,6 +666,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         mLastToast.setGravity(Gravity.TOP, 0, 0);
         mLastToast.show();
     }
+
 
 
 
@@ -885,6 +929,39 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
         return mTermuxTerminalViewClient;
     }
 
+    public boolean isBuiltInKeyboardMode() {
+        return mTerminalInputHostController != null
+            ? mTerminalInputHostController.isBuiltIn()
+            : new KeyboardPreferences(this).builtIn();
+    }
+
+    public boolean toggleBuiltInKeyboardIfActive() {
+        if (mTerminalInputHostController != null && mTerminalInputHostController.isBuiltIn()) {
+            mTerminalInputHostController.toggle();
+            return true;
+        }
+        return isBuiltInKeyboardMode();
+    }
+
+    public void resetBuiltInKeyboardState() {
+        if (mTerminalInputHostController != null) mTerminalInputHostController.reset();
+    }
+
+    public void refreshBuiltInKeyboardColors() {
+        if (mTerminalInputHostController != null)
+            mTerminalInputHostController.refreshTerminalColors();
+    }
+
+    public boolean hasBuiltInSpeechPermission() {
+        return ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
+            == PackageManager.PERMISSION_GRANTED;
+    }
+
+    public void requestBuiltInSpeechPermission() {
+        if (mSpeechPermissionLauncher != null)
+            mSpeechPermissionLauncher.launch(Manifest.permission.RECORD_AUDIO);
+    }
+
     public TermuxTerminalSessionActivityClient getTermuxTerminalSessionClient() {
         return mTermuxTerminalSessionActivityClient;
     }
@@ -966,6 +1043,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     }
 
     private void reloadActivityStyling(boolean recreateActivity) {
+        if (mTerminalInputHostController != null) mTerminalInputHostController.reload();
         if (mProperties != null) {
             reloadProperties();
 

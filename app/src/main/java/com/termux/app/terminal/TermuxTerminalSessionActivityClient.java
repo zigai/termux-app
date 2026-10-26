@@ -294,6 +294,7 @@ public class TermuxTerminalSessionActivityClient extends TermuxTerminalSessionCl
         if (session == null) return;
 
         if (mActivity.getTerminalView().attachSession(session)) {
+            mActivity.resetBuiltInKeyboardState();
             // notify about switched session if not already displaying the session
             notifyOfSessionChange();
         }
@@ -518,6 +519,7 @@ public class TermuxTerminalSessionActivityClient extends TermuxTerminalSessionCl
     }
 
     public void updateBackgroundColor() {
+        mActivity.refreshBuiltInKeyboardColors();
         if (!mActivity.isVisible()) return;
         TerminalSession session = mActivity.getCurrentSession();
         if (session != null && session.getEmulator() != null) {

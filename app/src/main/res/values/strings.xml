@@ -53,6 +53,28 @@
     <string name="action_create_named_session_confirm">Create</string>
 
     <string name="action_toggle_soft_keyboard">Keyboard</string>
+    <string name="termux_built_in_keyboard_title">Built-in terminal keyboard</string>
+    <string name="termux_built_in_keyboard_left_title">Left half of built-in terminal keyboard</string>
+    <string name="termux_built_in_keyboard_right_title">Right half of built-in terminal keyboard</string>
+    <string name="termux_landscape_keyboard_width_title">Landscape keyboard side width</string>
+    <string name="termux_landscape_keyboard_width_summary">Width of each side; the terminal remains between them</string>
+    <string name="termux_speech_provider_title">Speech recognition provider</string>
+    <string name="termux_speech_language_title">Speech language</string>
+    <string name="termux_speech_language_summary">Empty uses the provider default; otherwise enter a BCP 47 tag such as en-US</string>
+    <string name="termux_speech_language_dialog">Enter a BCP 47 language tag, or leave empty to use the provider default.</string>
+    <string name="termux_speech_diagnostics_title">Last speech input diagnostic</string>
+    <string name="termux_speech_stop">Stop</string>
+    <string name="termux_speech_cancel">Cancel</string>
+    <string name="termux_speech_dismiss">Dismiss</string>
+    <string name="termux_speech_input_accessibility">Speech input status</string>
+    <string name="termux_terminal_input_provider_title">Terminal input provider</string>
+    <string name="termux_reload_built_in_keyboard_title">Reload built-in keyboard</string>
+    <string name="termux_reload_built_in_keyboard_summary">Reload and validate keyboard.json without restarting</string>
+    <string name="termux_built_in_keyboard_diagnostics_title">Last keyboard configuration diagnostic</string>
+    <string-array name="termux_terminal_input_provider_entries"><item>Built-in keyboard</item><item>Android system keyboard</item></string-array>
+    <string-array name="termux_terminal_input_provider_values"><item>built_in</item><item>system</item></string-array>
+    <string-array name="termux_speech_provider_entries"><item>Automatic (on-device preferred)</item><item>Android on-device only</item><item>Android system service</item></string-array>
+    <string-array name="termux_speech_provider_values"><item>automatic</item><item>android_on_device</item><item>android_system</item></string-array>
 
     <string name="msg_enabling_terminal_toolbar">Enabling Terminal Toolbar</string>
     <string name="msg_disabling_terminal_toolbar">Disabling Terminal Toolbar</string>

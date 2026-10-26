@@ -1,0 +1,2435 @@
+{
+  "$schema": "https://raw.githubusercontent.com/zigai/termux-app/master/docs/keyboard/termux-keyboard.schema.json",
+  "schemaVersion": 1,
+  "defaultProfile": "default",
+  "profiles": {
+    "default": {
+      "theme": {
+        "background": "#000000",
+        "fill": "#303236",
+        "borderColor": "#00000000",
+        "borderWidth": 0,
+        "primaryColor": "#f1f3f4",
+        "secondaryColor": "#bdc1c6",
+        "pressedFill": "#4b4e52",
+        "armedFill": "#486987",
+        "lockedFill": "#6d4d80",
+        "fontFamily": "sans",
+        "fontWeight": "normal",
+        "secondaryTextScale": 0.52,
+        "preview": true,
+        "haptics": true,
+        "sound": false,
+        "repeatDelayMs": 500,
+        "repeatIntervalMs": 55
+      },
+      "styles": {
+        "modifier": {
+          "fill": "#25272a",
+          "fontFamily": "sansMedium",
+          "fontWeight": "medium"
+        },
+        "special": {
+          "fill": "#25272a"
+        },
+        "space": {
+          "fill": "#303236"
+        },
+        "action": {
+          "fill": "#8ab4f8",
+          "primaryColor": "#202124",
+          "cornerRadius": 8,
+          "iconSize": 24
+        }
+      },
+      "macros": {
+        "interrupt": [
+          {
+            "type": "text",
+            "text": "c",
+            "modifiers": [
+              "CTRL"
+            ]
+          }
+        ],
+        "clear": [
+          {
+            "type": "text",
+            "text": "clear"
+          },
+          {
+            "type": "terminalKey",
+            "key": "ENTER"
+          }
+        ]
+      },
+      "layers": {
+        "shift": {
+          "label": "SHIFT"
+        },
+        "altgr": {
+          "label": "ALT"
+        }
+      },
+      "variants": [
+        {
+          "id": "compact",
+          "minWidthDp": 0,
+          "maxWidthDp": 520,
+          "rowHeightDp": 44,
+          "rows": [
+            {
+              "keys": [
+                {
+                  "id": "1",
+                  "label": "1",
+                  "secondaryLabel": "!",
+                  "action": {
+                    "type": "text",
+                    "text": "1"
+                  },
+                  "alternatives": [
+                    {
+                      "label": "!",
+                      "action": {
+                        "type": "text",
+                        "text": "!"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "!",
+                      "secondaryLabel": "1",
+                      "action": {
+                        "type": "text",
+                        "text": "!"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "2",
+                  "label": "2",
+                  "secondaryLabel": "\"",
+                  "action": {
+                    "type": "text",
+                    "text": "2"
+                  },
+                  "alternatives": [
+                    {
+                      "label": "\"",
+                      "action": {
+                        "type": "text",
+                        "text": "\""
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "\"",
+                      "secondaryLabel": "2",
+                      "action": {
+                        "type": "text",
+                        "text": "\""
+                      }
+                    },
+                    "altgr": {
+                      "label": "@",
+                      "action": {
+                        "type": "text",
+                        "text": "@"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "3",
+                  "label": "3",
+                  "secondaryLabel": "#",
+                  "action": {
+                    "type": "text",
+                    "text": "3"
+                  },
+                  "alternatives": [
+                    {
+                      "label": "#",
+                      "action": {
+                        "type": "text",
+                        "text": "#"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "#",
+                      "secondaryLabel": "3",
+                      "action": {
+                        "type": "text",
+                        "text": "#"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "4",
+                  "label": "4",
+                  "secondaryLabel": "$",
+                  "action": {
+                    "type": "text",
+                    "text": "4"
+                  },
+                  "alternatives": [
+                    {
+                      "label": "$",
+                      "action": {
+                        "type": "text",
+                        "text": "$"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "$",
+                      "secondaryLabel": "4",
+                      "action": {
+                        "type": "text",
+                        "text": "$"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "5",
+                  "label": "5",
+                  "secondaryLabel": "%",
+                  "action": {
+                    "type": "text",
+                    "text": "5"
+                  },
+                  "alternatives": [
+                    {
+                      "label": "%",
+                      "action": {
+                        "type": "text",
+                        "text": "%"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "%",
+                      "secondaryLabel": "5",
+                      "action": {
+                        "type": "text",
+                        "text": "%"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "6",
+                  "label": "6",
+                  "secondaryLabel": "&",
+                  "action": {
+                    "type": "text",
+                    "text": "6"
+                  },
+                  "alternatives": [
+                    {
+                      "label": "&",
+                      "action": {
+                        "type": "text",
+                        "text": "&"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "&",
+                      "secondaryLabel": "6",
+                      "action": {
+                        "type": "text",
+                        "text": "&"
+                      }
+                    },
+                    "altgr": {
+                      "label": "^",
+                      "action": {
+                        "type": "text",
+                        "text": "^"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "7",
+                  "label": "7",
+                  "secondaryLabel": "/",
+                  "action": {
+                    "type": "text",
+                    "text": "7"
+                  },
+                  "alternatives": [
+                    {
+                      "label": "/",
+                      "action": {
+                        "type": "text",
+                        "text": "/"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "/",
+                      "secondaryLabel": "7",
+                      "action": {
+                        "type": "text",
+                        "text": "/"
+                      }
+                    },
+                    "altgr": {
+                      "label": "{",
+                      "action": {
+                        "type": "text",
+                        "text": "{"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "8",
+                  "label": "8",
+                  "secondaryLabel": "(",
+                  "action": {
+                    "type": "text",
+                    "text": "8"
+                  },
+                  "alternatives": [
+                    {
+                      "label": "(",
+                      "action": {
+                        "type": "text",
+                        "text": "("
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "(",
+                      "secondaryLabel": "8",
+                      "action": {
+                        "type": "text",
+                        "text": "("
+                      }
+                    },
+                    "altgr": {
+                      "label": "[",
+                      "action": {
+                        "type": "text",
+                        "text": "["
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "9",
+                  "label": "9",
+                  "secondaryLabel": ")",
+                  "action": {
+                    "type": "text",
+                    "text": "9"
+                  },
+                  "alternatives": [
+                    {
+                      "label": ")",
+                      "action": {
+                        "type": "text",
+                        "text": ")"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": ")",
+                      "secondaryLabel": "9",
+                      "action": {
+                        "type": "text",
+                        "text": ")"
+                      }
+                    },
+                    "altgr": {
+                      "label": "]",
+                      "action": {
+                        "type": "text",
+                        "text": "]"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "0",
+                  "label": "0",
+                  "secondaryLabel": "=",
+                  "action": {
+                    "type": "text",
+                    "text": "0"
+                  },
+                  "alternatives": [
+                    {
+                      "label": "=",
+                      "action": {
+                        "type": "text",
+                        "text": "="
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "=",
+                      "secondaryLabel": "0",
+                      "action": {
+                        "type": "text",
+                        "text": "="
+                      }
+                    },
+                    "altgr": {
+                      "label": "}",
+                      "action": {
+                        "type": "text",
+                        "text": "}"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "backspace",
+                  "accessibilityLabel": "Backspace",
+                  "width": 1.5,
+                  "styleClass": "special",
+                  "repeat": true,
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "BACKSPACE"
+                  },
+                  "icon": "backspace",
+                  "preview": false,
+                  "layers": {
+                    "shift": {
+                      "action": {
+                        "type": "terminalKey",
+                        "key": "DELETE"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "keys": [
+                {
+                  "id": "q",
+                  "label": "q",
+                  "action": {
+                    "type": "text",
+                    "text": "q"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "w",
+                  "label": "w",
+                  "action": {
+                    "type": "text",
+                    "text": "w"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "e",
+                  "label": "e",
+                  "action": {
+                    "type": "text",
+                    "text": "e"
+                  },
+                  "layers": {
+                    "altgr": {
+                      "label": "€",
+                      "action": {
+                        "type": "text",
+                        "text": "€"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "r",
+                  "label": "r",
+                  "action": {
+                    "type": "text",
+                    "text": "r"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "t",
+                  "label": "t",
+                  "action": {
+                    "type": "text",
+                    "text": "t"
+                  },
+                  "layers": {
+                    "altgr": {
+                      "label": "~",
+                      "action": {
+                        "type": "text",
+                        "text": "~"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "y",
+                  "label": "y",
+                  "action": {
+                    "type": "text",
+                    "text": "y"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "u",
+                  "label": "u",
+                  "action": {
+                    "type": "text",
+                    "text": "u"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "i",
+                  "label": "i",
+                  "action": {
+                    "type": "text",
+                    "text": "i"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "o",
+                  "label": "o",
+                  "action": {
+                    "type": "text",
+                    "text": "o"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "p",
+                  "label": "p",
+                  "action": {
+                    "type": "text",
+                    "text": "p"
+                  },
+                  "layers": {
+                    "altgr": {
+                      "label": "|",
+                      "action": {
+                        "type": "text",
+                        "text": "|"
+                      }
+                    }
+                  },
+                  "width": 1
+                }
+              ]
+            },
+            {
+              "keys": [
+                {
+                  "id": "a",
+                  "label": "a",
+                  "action": {
+                    "type": "text",
+                    "text": "a"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "s",
+                  "label": "s",
+                  "action": {
+                    "type": "text",
+                    "text": "s"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "d",
+                  "label": "d",
+                  "action": {
+                    "type": "text",
+                    "text": "d"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "f",
+                  "label": "f",
+                  "action": {
+                    "type": "text",
+                    "text": "f"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "g",
+                  "label": "g",
+                  "action": {
+                    "type": "text",
+                    "text": "g"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "h",
+                  "label": "h",
+                  "action": {
+                    "type": "text",
+                    "text": "h"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "j",
+                  "label": "j",
+                  "action": {
+                    "type": "text",
+                    "text": "j"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "k",
+                  "label": "k",
+                  "action": {
+                    "type": "text",
+                    "text": "k"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "l",
+                  "label": "l",
+                  "action": {
+                    "type": "text",
+                    "text": "l"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "semicolon",
+                  "label": ";",
+                  "width": 1,
+                  "action": {
+                    "type": "text",
+                    "text": ";"
+                  },
+                  "alternatives": [
+                    {
+                      "label": ":",
+                      "action": {
+                        "type": "text",
+                        "text": ":"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": ":",
+                      "action": {
+                        "type": "text",
+                        "text": ":"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "keys": [
+                {
+                  "id": "shift",
+                  "width": 1.5,
+                  "styleClass": "modifier",
+                  "action": {
+                    "type": "modifier",
+                    "modifier": "SHIFT",
+                    "mode": "smart"
+                  },
+                  "icon": "shift",
+                  "accessibilityLabel": "Shift",
+                  "preview": false
+                },
+                {
+                  "id": "z",
+                  "label": "z",
+                  "action": {
+                    "type": "text",
+                    "text": "z"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "x",
+                  "label": "x",
+                  "action": {
+                    "type": "text",
+                    "text": "x"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "c",
+                  "label": "c",
+                  "action": {
+                    "type": "text",
+                    "text": "c"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "v",
+                  "label": "v",
+                  "action": {
+                    "type": "text",
+                    "text": "v"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "b",
+                  "label": "b",
+                  "action": {
+                    "type": "text",
+                    "text": "b"
+                  },
+                  "layers": {
+                    "altgr": {
+                      "label": "`",
+                      "action": {
+                        "type": "text",
+                        "text": "`"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "n",
+                  "label": "n",
+                  "action": {
+                    "type": "text",
+                    "text": "n"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "m",
+                  "label": "m",
+                  "action": {
+                    "type": "text",
+                    "text": "m"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "enter",
+                  "width": 1.5,
+                  "styleClass": "action",
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "ENTER"
+                  },
+                  "icon": "enter",
+                  "accessibilityLabel": "Enter",
+                  "preview": false
+                }
+              ]
+            },
+            {
+              "keys": [
+                {
+                  "id": "esc",
+                  "label": "ESC",
+                  "styleClass": "special",
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "ESCAPE"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "tab",
+                  "width": 1,
+                  "styleClass": "special",
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "TAB"
+                  },
+                  "icon": "tab",
+                  "accessibilityLabel": "Tab",
+                  "preview": false
+                },
+                {
+                  "id": "minus",
+                  "label": "-",
+                  "width": 1,
+                  "action": {
+                    "type": "text",
+                    "text": "-"
+                  },
+                  "alternatives": [
+                    {
+                      "label": "_",
+                      "action": {
+                        "type": "text",
+                        "text": "_"
+                      }
+                    },
+                    {
+                      "label": "*",
+                      "action": {
+                        "type": "text",
+                        "text": "*"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "_",
+                      "action": {
+                        "type": "text",
+                        "text": "_"
+                      }
+                    },
+                    "altgr": {
+                      "label": "*",
+                      "action": {
+                        "type": "text",
+                        "text": "*"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "equals",
+                  "label": "=",
+                  "action": {
+                    "type": "text",
+                    "text": "="
+                  },
+                  "alternatives": [
+                    {
+                      "label": "+",
+                      "action": {
+                        "type": "text",
+                        "text": "+"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "+",
+                      "action": {
+                        "type": "text",
+                        "text": "+"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "lbracket",
+                  "label": "[",
+                  "action": {
+                    "type": "text",
+                    "text": "["
+                  },
+                  "width": 1,
+                  "alternatives": [
+                    {
+                      "label": "{",
+                      "action": {
+                        "type": "text",
+                        "text": "{"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "{",
+                      "action": {
+                        "type": "text",
+                        "text": "{"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "rbracket",
+                  "label": "]",
+                  "action": {
+                    "type": "text",
+                    "text": "]"
+                  },
+                  "width": 1,
+                  "alternatives": [
+                    {
+                      "label": "}",
+                      "action": {
+                        "type": "text",
+                        "text": "}"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "}",
+                      "action": {
+                        "type": "text",
+                        "text": "}"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "slash",
+                  "label": "/",
+                  "width": 1,
+                  "action": {
+                    "type": "text",
+                    "text": "/"
+                  },
+                  "alternatives": [
+                    {
+                      "label": "?",
+                      "action": {
+                        "type": "text",
+                        "text": "?"
+                      }
+                    },
+                    {
+                      "label": "'",
+                      "action": {
+                        "type": "text",
+                        "text": "'"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "?",
+                      "action": {
+                        "type": "text",
+                        "text": "?"
+                      }
+                    },
+                    "altgr": {
+                      "label": "'",
+                      "action": {
+                        "type": "text",
+                        "text": "'"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "home",
+                  "label": "HOME",
+                  "accessibilityLabel": "Home",
+                  "width": 1,
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "HOME"
+                  },
+                  "preview": false,
+                  "alternatives": [
+                    {
+                      "label": "PG↑",
+                      "action": {
+                        "type": "terminalKey",
+                        "key": "PAGE_UP"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "up",
+                  "accessibilityLabel": "Up arrow",
+                  "width": 1,
+                  "repeat": true,
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "UP"
+                  },
+                  "icon": "arrowUp",
+                  "preview": false
+                },
+                {
+                  "id": "end",
+                  "label": "END",
+                  "accessibilityLabel": "End",
+                  "width": 1,
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "END"
+                  },
+                  "preview": false,
+                  "alternatives": [
+                    {
+                      "label": "PG↓",
+                      "action": {
+                        "type": "terminalKey",
+                        "key": "PAGE_DOWN"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "keys": [
+                {
+                  "id": "ctrl",
+                  "label": "CTRL",
+                  "accessibilityLabel": "Control",
+                  "width": 1.1,
+                  "styleClass": "modifier",
+                  "action": {
+                    "type": "modifier",
+                    "modifier": "CTRL",
+                    "mode": "smart"
+                  }
+                },
+                {
+                  "id": "alt",
+                  "label": "ALT",
+                  "accessibilityLabel": "Alt",
+                  "width": 1.1,
+                  "styleClass": "modifier",
+                  "action": {
+                    "type": "modifier",
+                    "modifier": "ALT",
+                    "mode": "smart"
+                  },
+                  "alternatives": [
+                    {
+                      "label": "AltGr",
+                      "action": {
+                        "type": "layer",
+                        "layer": "altgr",
+                        "mode": "smart"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "comma",
+                  "label": ",",
+                  "width": 0.75,
+                  "action": {
+                    "type": "text",
+                    "text": ","
+                  },
+                  "alternatives": [
+                    {
+                      "label": "<",
+                      "action": {
+                        "type": "text",
+                        "text": "<"
+                      }
+                    },
+                    {
+                      "label": ";",
+                      "action": {
+                        "type": "text",
+                        "text": ";"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "<",
+                      "action": {
+                        "type": "text",
+                        "text": "<"
+                      }
+                    },
+                    "altgr": {
+                      "label": ";",
+                      "action": {
+                        "type": "text",
+                        "text": ";"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "speech",
+                  "accessibilityLabel": "Voice input",
+                  "width": 0.8,
+                  "styleClass": "special",
+                  "action": {
+                    "type": "app",
+                    "app": "speechInput"
+                  },
+                  "icon": "microphone",
+                  "preview": false
+                },
+                {
+                  "id": "space",
+                  "accessibilityLabel": "Space",
+                  "width": 2.5,
+                  "styleClass": "space",
+                  "cursorGesture": true,
+                  "action": {
+                    "type": "text",
+                    "text": " "
+                  },
+                  "icon": "space",
+                  "preview": false
+                },
+                {
+                  "id": "period",
+                  "label": ".",
+                  "width": 0.75,
+                  "action": {
+                    "type": "text",
+                    "text": "."
+                  },
+                  "alternatives": [
+                    {
+                      "label": "/",
+                      "action": {
+                        "type": "text",
+                        "text": "/"
+                      }
+                    },
+                    {
+                      "label": ">",
+                      "action": {
+                        "type": "text",
+                        "text": ">"
+                      }
+                    },
+                    {
+                      "label": "\\",
+                      "action": {
+                        "type": "text",
+                        "text": "\\"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": ">",
+                      "action": {
+                        "type": "text",
+                        "text": ">"
+                      }
+                    },
+                    "altgr": {
+                      "label": "\\",
+                      "action": {
+                        "type": "text",
+                        "text": "\\"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "left",
+                  "accessibilityLabel": "Left arrow",
+                  "width": 1,
+                  "repeat": true,
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "LEFT"
+                  },
+                  "icon": "arrowLeft",
+                  "preview": false
+                },
+                {
+                  "id": "down",
+                  "accessibilityLabel": "Down arrow",
+                  "width": 1,
+                  "repeat": true,
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "DOWN"
+                  },
+                  "icon": "arrowDown",
+                  "preview": false
+                },
+                {
+                  "id": "right",
+                  "accessibilityLabel": "Right arrow",
+                  "width": 1,
+                  "repeat": true,
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "RIGHT"
+                  },
+                  "icon": "arrowRight",
+                  "preview": false
+                }
+              ]
+            }
+          ],
+          "appearance": {
+            "horizontalGap": 4,
+            "verticalGap": 4,
+            "horizontalPadding": 4,
+            "verticalPadding": 5,
+            "cornerRadius": 7,
+            "textSize": 16,
+            "iconSize": 23
+          },
+          "landscapeSplit": {
+            "railWidthPercent": 18,
+            "railMinWidthDp": 72,
+            "maxHeightDp": 520,
+            "rowHeightDp": 42,
+            "utilityRowHeightDp": 24,
+            "appearance": {
+              "horizontalGap": 1,
+              "verticalGap": 2,
+              "horizontalPadding": 1,
+              "verticalPadding": 3,
+              "cornerRadius": 5,
+              "textSize": 14,
+              "iconSize": 20,
+              "secondaryTextScale": 0.48,
+              "verticalAlignment": "center"
+            },
+            "leftUtility": [
+              "esc",
+              "tab",
+              "speech",
+              "home"
+            ],
+            "rightUtility": [
+              "ctrl",
+              "minus",
+              "equals",
+              "slash"
+            ],
+            "left": [
+              [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              [
+                "q",
+                "w",
+                "e",
+                "r",
+                "t"
+              ],
+              [
+                "a",
+                "s",
+                "d",
+                "f",
+                "g"
+              ],
+              [
+                "shift",
+                "z",
+                "x",
+                "c",
+                "v"
+              ],
+              [
+                "ctrl",
+                "alt",
+                "comma",
+                "space"
+              ]
+            ],
+            "right": [
+              [
+                "6",
+                "7",
+                "8",
+                "9",
+                "0"
+              ],
+              [
+                "y",
+                "u",
+                "i",
+                "o",
+                "p"
+              ],
+              [
+                "h",
+                "j",
+                "k",
+                "l",
+                "backspace"
+              ],
+              [
+                "b",
+                "n",
+                "m",
+                "up",
+                "enter"
+              ],
+              [
+                "space",
+                "period",
+                "left",
+                "down",
+                "right"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "wide",
+          "minWidthDp": 520,
+          "rowHeightDp": 48,
+          "rows": [
+            {
+              "keys": [
+                {
+                  "id": "1",
+                  "label": "1",
+                  "secondaryLabel": "!",
+                  "action": {
+                    "type": "text",
+                    "text": "1"
+                  },
+                  "layers": {
+                    "shift": {
+                      "label": "!",
+                      "action": {
+                        "type": "text",
+                        "text": "!"
+                      }
+                    }
+                  },
+                  "alternatives": [
+                    {
+                      "label": "!",
+                      "action": {
+                        "type": "text",
+                        "text": "!"
+                      }
+                    }
+                  ],
+                  "width": 1
+                },
+                {
+                  "id": "2",
+                  "label": "2",
+                  "secondaryLabel": "\"",
+                  "action": {
+                    "type": "text",
+                    "text": "2"
+                  },
+                  "layers": {
+                    "shift": {
+                      "label": "\"",
+                      "action": {
+                        "type": "text",
+                        "text": "\""
+                      }
+                    },
+                    "altgr": {
+                      "label": "@",
+                      "action": {
+                        "type": "text",
+                        "text": "@"
+                      }
+                    }
+                  },
+                  "alternatives": [
+                    {
+                      "label": "\"",
+                      "action": {
+                        "type": "text",
+                        "text": "\""
+                      }
+                    }
+                  ],
+                  "width": 1
+                },
+                {
+                  "id": "3",
+                  "label": "3",
+                  "secondaryLabel": "#",
+                  "action": {
+                    "type": "text",
+                    "text": "3"
+                  },
+                  "layers": {
+                    "shift": {
+                      "label": "#",
+                      "action": {
+                        "type": "text",
+                        "text": "#"
+                      }
+                    }
+                  },
+                  "alternatives": [
+                    {
+                      "label": "#",
+                      "action": {
+                        "type": "text",
+                        "text": "#"
+                      }
+                    }
+                  ],
+                  "width": 1
+                },
+                {
+                  "id": "4",
+                  "label": "4",
+                  "secondaryLabel": "$",
+                  "action": {
+                    "type": "text",
+                    "text": "4"
+                  },
+                  "layers": {
+                    "shift": {
+                      "label": "$",
+                      "action": {
+                        "type": "text",
+                        "text": "$"
+                      }
+                    }
+                  },
+                  "alternatives": [
+                    {
+                      "label": "$",
+                      "action": {
+                        "type": "text",
+                        "text": "$"
+                      }
+                    }
+                  ],
+                  "width": 1
+                },
+                {
+                  "id": "5",
+                  "label": "5",
+                  "secondaryLabel": "%",
+                  "action": {
+                    "type": "text",
+                    "text": "5"
+                  },
+                  "layers": {
+                    "shift": {
+                      "label": "%",
+                      "action": {
+                        "type": "text",
+                        "text": "%"
+                      }
+                    }
+                  },
+                  "alternatives": [
+                    {
+                      "label": "%",
+                      "action": {
+                        "type": "text",
+                        "text": "%"
+                      }
+                    }
+                  ],
+                  "width": 1
+                },
+                {
+                  "id": "6",
+                  "label": "6",
+                  "secondaryLabel": "&",
+                  "action": {
+                    "type": "text",
+                    "text": "6"
+                  },
+                  "layers": {
+                    "shift": {
+                      "label": "&",
+                      "action": {
+                        "type": "text",
+                        "text": "&"
+                      }
+                    },
+                    "altgr": {
+                      "label": "^",
+                      "action": {
+                        "type": "text",
+                        "text": "^"
+                      }
+                    }
+                  },
+                  "alternatives": [
+                    {
+                      "label": "&",
+                      "action": {
+                        "type": "text",
+                        "text": "&"
+                      }
+                    }
+                  ],
+                  "width": 1
+                },
+                {
+                  "id": "7",
+                  "label": "7",
+                  "secondaryLabel": "/",
+                  "action": {
+                    "type": "text",
+                    "text": "7"
+                  },
+                  "layers": {
+                    "shift": {
+                      "label": "/",
+                      "action": {
+                        "type": "text",
+                        "text": "/"
+                      }
+                    },
+                    "altgr": {
+                      "label": "{",
+                      "action": {
+                        "type": "text",
+                        "text": "{"
+                      }
+                    }
+                  },
+                  "alternatives": [
+                    {
+                      "label": "/",
+                      "action": {
+                        "type": "text",
+                        "text": "/"
+                      }
+                    }
+                  ],
+                  "width": 1
+                },
+                {
+                  "id": "8",
+                  "label": "8",
+                  "secondaryLabel": "(",
+                  "action": {
+                    "type": "text",
+                    "text": "8"
+                  },
+                  "layers": {
+                    "shift": {
+                      "label": "(",
+                      "action": {
+                        "type": "text",
+                        "text": "("
+                      }
+                    },
+                    "altgr": {
+                      "label": "[",
+                      "action": {
+                        "type": "text",
+                        "text": "["
+                      }
+                    }
+                  },
+                  "alternatives": [
+                    {
+                      "label": "(",
+                      "action": {
+                        "type": "text",
+                        "text": "("
+                      }
+                    }
+                  ],
+                  "width": 1
+                },
+                {
+                  "id": "9",
+                  "label": "9",
+                  "secondaryLabel": ")",
+                  "action": {
+                    "type": "text",
+                    "text": "9"
+                  },
+                  "layers": {
+                    "shift": {
+                      "label": ")",
+                      "action": {
+                        "type": "text",
+                        "text": ")"
+                      }
+                    },
+                    "altgr": {
+                      "label": "]",
+                      "action": {
+                        "type": "text",
+                        "text": "]"
+                      }
+                    }
+                  },
+                  "alternatives": [
+                    {
+                      "label": ")",
+                      "action": {
+                        "type": "text",
+                        "text": ")"
+                      }
+                    }
+                  ],
+                  "width": 1
+                },
+                {
+                  "id": "0",
+                  "label": "0",
+                  "secondaryLabel": "=",
+                  "action": {
+                    "type": "text",
+                    "text": "0"
+                  },
+                  "layers": {
+                    "shift": {
+                      "label": "=",
+                      "action": {
+                        "type": "text",
+                        "text": "="
+                      }
+                    },
+                    "altgr": {
+                      "label": "}",
+                      "action": {
+                        "type": "text",
+                        "text": "}"
+                      }
+                    }
+                  },
+                  "alternatives": [
+                    {
+                      "label": "=",
+                      "action": {
+                        "type": "text",
+                        "text": "="
+                      }
+                    }
+                  ],
+                  "width": 1
+                },
+                {
+                  "id": "backspace",
+                  "width": 1.5,
+                  "styleClass": "special",
+                  "repeat": true,
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "BACKSPACE"
+                  },
+                  "icon": "backspace",
+                  "accessibilityLabel": "Backspace",
+                  "preview": false,
+                  "layers": {
+                    "shift": {
+                      "action": {
+                        "type": "terminalKey",
+                        "key": "DELETE"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "keys": [
+                {
+                  "id": "q",
+                  "label": "q",
+                  "action": {
+                    "type": "text",
+                    "text": "q"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "w",
+                  "label": "w",
+                  "action": {
+                    "type": "text",
+                    "text": "w"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "e",
+                  "label": "e",
+                  "action": {
+                    "type": "text",
+                    "text": "e"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "r",
+                  "label": "r",
+                  "action": {
+                    "type": "text",
+                    "text": "r"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "t",
+                  "label": "t",
+                  "action": {
+                    "type": "text",
+                    "text": "t"
+                  },
+                  "layers": {
+                    "altgr": {
+                      "label": "~",
+                      "action": {
+                        "type": "text",
+                        "text": "~"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "y",
+                  "label": "y",
+                  "action": {
+                    "type": "text",
+                    "text": "y"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "u",
+                  "label": "u",
+                  "action": {
+                    "type": "text",
+                    "text": "u"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "i",
+                  "label": "i",
+                  "action": {
+                    "type": "text",
+                    "text": "i"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "o",
+                  "label": "o",
+                  "action": {
+                    "type": "text",
+                    "text": "o"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "p",
+                  "label": "p",
+                  "action": {
+                    "type": "text",
+                    "text": "p"
+                  },
+                  "layers": {
+                    "altgr": {
+                      "label": "|",
+                      "action": {
+                        "type": "text",
+                        "text": "|"
+                      }
+                    }
+                  },
+                  "width": 1
+                }
+              ]
+            },
+            {
+              "keys": [
+                {
+                  "id": "a",
+                  "label": "a",
+                  "action": {
+                    "type": "text",
+                    "text": "a"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "s",
+                  "label": "s",
+                  "action": {
+                    "type": "text",
+                    "text": "s"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "d",
+                  "label": "d",
+                  "action": {
+                    "type": "text",
+                    "text": "d"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "f",
+                  "label": "f",
+                  "action": {
+                    "type": "text",
+                    "text": "f"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "g",
+                  "label": "g",
+                  "action": {
+                    "type": "text",
+                    "text": "g"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "h",
+                  "label": "h",
+                  "action": {
+                    "type": "text",
+                    "text": "h"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "j",
+                  "label": "j",
+                  "action": {
+                    "type": "text",
+                    "text": "j"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "k",
+                  "label": "k",
+                  "action": {
+                    "type": "text",
+                    "text": "k"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "l",
+                  "label": "l",
+                  "action": {
+                    "type": "text",
+                    "text": "l"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "semicolon",
+                  "label": ";",
+                  "width": 1,
+                  "action": {
+                    "type": "text",
+                    "text": ";"
+                  },
+                  "alternatives": [
+                    {
+                      "label": ":",
+                      "action": {
+                        "type": "text",
+                        "text": ":"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": ":",
+                      "action": {
+                        "type": "text",
+                        "text": ":"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "keys": [
+                {
+                  "id": "shiftLeft",
+                  "width": 1.5,
+                  "styleClass": "modifier",
+                  "action": {
+                    "type": "modifier",
+                    "modifier": "SHIFT",
+                    "mode": "smart"
+                  },
+                  "icon": "shift",
+                  "accessibilityLabel": "Shift",
+                  "preview": false
+                },
+                {
+                  "id": "z",
+                  "label": "z",
+                  "action": {
+                    "type": "text",
+                    "text": "z"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "x",
+                  "label": "x",
+                  "action": {
+                    "type": "text",
+                    "text": "x"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "c",
+                  "label": "c",
+                  "action": {
+                    "type": "text",
+                    "text": "c"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "v",
+                  "label": "v",
+                  "action": {
+                    "type": "text",
+                    "text": "v"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "b",
+                  "label": "b",
+                  "action": {
+                    "type": "text",
+                    "text": "b"
+                  },
+                  "layers": {
+                    "altgr": {
+                      "label": "`",
+                      "action": {
+                        "type": "text",
+                        "text": "`"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "n",
+                  "label": "n",
+                  "action": {
+                    "type": "text",
+                    "text": "n"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "m",
+                  "label": "m",
+                  "action": {
+                    "type": "text",
+                    "text": "m"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "enter",
+                  "width": 1.5,
+                  "styleClass": "action",
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "ENTER"
+                  },
+                  "icon": "enter",
+                  "accessibilityLabel": "Enter",
+                  "preview": false
+                }
+              ]
+            },
+            {
+              "keys": [
+                {
+                  "id": "esc",
+                  "label": "ESC",
+                  "styleClass": "special",
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "ESCAPE"
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "tab",
+                  "width": 1,
+                  "styleClass": "special",
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "TAB"
+                  },
+                  "icon": "tab",
+                  "accessibilityLabel": "Tab",
+                  "preview": false
+                },
+                {
+                  "id": "minus",
+                  "label": "-",
+                  "action": {
+                    "type": "text",
+                    "text": "-"
+                  },
+                  "alternatives": [
+                    {
+                      "label": "_",
+                      "action": {
+                        "type": "text",
+                        "text": "_"
+                      }
+                    },
+                    {
+                      "label": "*",
+                      "action": {
+                        "type": "text",
+                        "text": "*"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "_",
+                      "action": {
+                        "type": "text",
+                        "text": "_"
+                      }
+                    },
+                    "altgr": {
+                      "label": "*",
+                      "action": {
+                        "type": "text",
+                        "text": "*"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "equals",
+                  "label": "=",
+                  "action": {
+                    "type": "text",
+                    "text": "="
+                  },
+                  "alternatives": [
+                    {
+                      "label": "+",
+                      "action": {
+                        "type": "text",
+                        "text": "+"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "+",
+                      "action": {
+                        "type": "text",
+                        "text": "+"
+                      }
+                    }
+                  },
+                  "width": 1
+                },
+                {
+                  "id": "lbracket",
+                  "label": "[",
+                  "action": {
+                    "type": "text",
+                    "text": "["
+                  },
+                  "width": 1,
+                  "alternatives": [
+                    {
+                      "label": "{",
+                      "action": {
+                        "type": "text",
+                        "text": "{"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "{",
+                      "action": {
+                        "type": "text",
+                        "text": "{"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "rbracket",
+                  "label": "]",
+                  "action": {
+                    "type": "text",
+                    "text": "]"
+                  },
+                  "width": 1,
+                  "alternatives": [
+                    {
+                      "label": "}",
+                      "action": {
+                        "type": "text",
+                        "text": "}"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "}",
+                      "action": {
+                        "type": "text",
+                        "text": "}"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "slash",
+                  "label": "/",
+                  "width": 1,
+                  "action": {
+                    "type": "text",
+                    "text": "/"
+                  },
+                  "alternatives": [
+                    {
+                      "label": "?",
+                      "action": {
+                        "type": "text",
+                        "text": "?"
+                      }
+                    },
+                    {
+                      "label": "'",
+                      "action": {
+                        "type": "text",
+                        "text": "'"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "?",
+                      "action": {
+                        "type": "text",
+                        "text": "?"
+                      }
+                    },
+                    "altgr": {
+                      "label": "'",
+                      "action": {
+                        "type": "text",
+                        "text": "'"
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "home",
+                  "label": "HOME",
+                  "accessibilityLabel": "Home",
+                  "width": 1,
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "HOME"
+                  },
+                  "preview": false,
+                  "alternatives": [
+                    {
+                      "label": "PG↑",
+                      "action": {
+                        "type": "terminalKey",
+                        "key": "PAGE_UP"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "up",
+                  "accessibilityLabel": "Up arrow",
+                  "width": 1,
+                  "repeat": true,
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "UP"
+                  },
+                  "icon": "arrowUp",
+                  "preview": false
+                },
+                {
+                  "id": "end",
+                  "label": "END",
+                  "accessibilityLabel": "End",
+                  "width": 1,
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "END"
+                  },
+                  "preview": false,
+                  "alternatives": [
+                    {
+                      "label": "PG↓",
+                      "action": {
+                        "type": "terminalKey",
+                        "key": "PAGE_DOWN"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "keys": [
+                {
+                  "id": "ctrl",
+                  "label": "CTRL",
+                  "accessibilityLabel": "Control",
+                  "width": 1.1,
+                  "styleClass": "modifier",
+                  "action": {
+                    "type": "modifier",
+                    "modifier": "CTRL",
+                    "mode": "smart"
+                  }
+                },
+                {
+                  "id": "alt",
+                  "label": "ALT",
+                  "accessibilityLabel": "Alt",
+                  "width": 1.1,
+                  "styleClass": "modifier",
+                  "action": {
+                    "type": "modifier",
+                    "modifier": "ALT",
+                    "mode": "smart"
+                  },
+                  "alternatives": [
+                    {
+                      "label": "AltGr",
+                      "action": {
+                        "type": "layer",
+                        "layer": "altgr",
+                        "mode": "smart"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "comma",
+                  "label": ",",
+                  "action": {
+                    "type": "text",
+                    "text": ","
+                  },
+                  "alternatives": [
+                    {
+                      "label": "<",
+                      "action": {
+                        "type": "text",
+                        "text": "<"
+                      }
+                    },
+                    {
+                      "label": ";",
+                      "action": {
+                        "type": "text",
+                        "text": ";"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": "<",
+                      "action": {
+                        "type": "text",
+                        "text": "<"
+                      }
+                    },
+                    "altgr": {
+                      "label": ";",
+                      "action": {
+                        "type": "text",
+                        "text": ";"
+                      }
+                    }
+                  },
+                  "width": 0.75
+                },
+                {
+                  "id": "speech",
+                  "accessibilityLabel": "Voice input",
+                  "width": 0.8,
+                  "styleClass": "special",
+                  "action": {
+                    "type": "app",
+                    "app": "speechInput"
+                  },
+                  "icon": "microphone",
+                  "preview": false
+                },
+                {
+                  "id": "space",
+                  "width": 2.5,
+                  "styleClass": "space",
+                  "cursorGesture": true,
+                  "action": {
+                    "type": "text",
+                    "text": " "
+                  },
+                  "icon": "space",
+                  "accessibilityLabel": "Space",
+                  "preview": false
+                },
+                {
+                  "id": "period",
+                  "label": ".",
+                  "action": {
+                    "type": "text",
+                    "text": "."
+                  },
+                  "alternatives": [
+                    {
+                      "label": "/",
+                      "action": {
+                        "type": "text",
+                        "text": "/"
+                      }
+                    },
+                    {
+                      "label": ">",
+                      "action": {
+                        "type": "text",
+                        "text": ">"
+                      }
+                    },
+                    {
+                      "label": "\\",
+                      "action": {
+                        "type": "text",
+                        "text": "\\"
+                      }
+                    }
+                  ],
+                  "layers": {
+                    "shift": {
+                      "label": ">",
+                      "action": {
+                        "type": "text",
+                        "text": ">"
+                      }
+                    },
+                    "altgr": {
+                      "label": "\\",
+                      "action": {
+                        "type": "text",
+                        "text": "\\"
+                      }
+                    }
+                  },
+                  "width": 0.75
+                },
+                {
+                  "id": "left",
+                  "accessibilityLabel": "Left arrow",
+                  "width": 1,
+                  "repeat": true,
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "LEFT"
+                  },
+                  "icon": "arrowLeft",
+                  "preview": false
+                },
+                {
+                  "id": "down",
+                  "accessibilityLabel": "Down arrow",
+                  "repeat": true,
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "DOWN"
+                  },
+                  "icon": "arrowDown",
+                  "preview": false,
+                  "width": 1
+                },
+                {
+                  "id": "right",
+                  "accessibilityLabel": "Right arrow",
+                  "repeat": true,
+                  "action": {
+                    "type": "terminalKey",
+                    "key": "RIGHT"
+                  },
+                  "icon": "arrowRight",
+                  "preview": false,
+                  "width": 1
+                }
+              ]
+            }
+          ],
+          "appearance": {
+            "horizontalGap": 4,
+            "verticalGap": 4,
+            "horizontalPadding": 5,
+            "verticalPadding": 5,
+            "cornerRadius": 7,
+            "textSize": 16,
+            "iconSize": 23
+          }
+        }
+      ]
+    }
+  }
+}

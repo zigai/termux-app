@@ -908,6 +908,21 @@ public final class TerminalView extends View {
         }
     }
 
+    /**
+     * Write a literal code point without consulting hardware or extra-keys modifier state.
+     *
+     * <p>This is intended for already-sanitized text insertion, such as a speech transcription,
+     * where ambient Ctrl, Alt, or Fn state must not transform the text.
+     */
+    public void inputLiteralCodePoint(int codePoint) {
+        if (mTermSession == null) return;
+
+        if (mEmulator != null)
+            mEmulator.setCursorBlinkState(true);
+
+        mTermSession.writeCodePoint(false, codePoint);
+    }
+
     /** Input the specified keyCode if applicable and return if the input was consumed. */
     public boolean handleKeyCode(int keyCode, int keyMod) {
         // Ensure cursor is shown when a key is pressed down like long hold on (arrow) keys

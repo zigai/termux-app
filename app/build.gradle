@@ -35,6 +35,8 @@ android {
         implementation "io.noties.markwon:linkify:$markwonVersion"
         implementation "io.noties.markwon:recycler:$markwonVersion"
         implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
+        // Apache-2.0, Java 8/API 21 compatible. Strict typed keyboard configuration decoding.
+        implementation "com.squareup.moshi:moshi:1.15.2"
 
         implementation project(":terminal-view")
         implementation project(":termux-shared")
@@ -148,7 +150,9 @@ android {
 dependencies {
     testImplementation "junit:junit:4.13.2"
     testImplementation "org.robolectric:robolectric:4.10"
-    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:1.1.5"
+    // Test-only Draft 2020-12 validation; never packaged in the APK.
+    testImplementation "com.networknt:json-schema-validator:1.0.87"
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:2.1.5"
 }
 
 task versionName {

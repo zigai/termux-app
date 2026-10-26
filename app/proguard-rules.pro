@@ -8,5 +8,10 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
 -dontobfuscate
+
+# Moshi decodes the strict keyboard DTOs reflectively. Preserve their field contract in release builds.
+-keep class com.termux.app.terminal.keyboard.config.KeyboardDocument { *; }
+-keep class com.termux.app.terminal.keyboard.config.KeyboardDocument$* { *; }
+-keep class com.termux.app.terminal.keyboard.config.KeyboardAction { *; }
 #-renamesourcefileattribute SourceFile
 #-keepattributes SourceFile,LineNumberTable
