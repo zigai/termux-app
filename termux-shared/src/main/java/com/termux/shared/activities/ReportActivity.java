@@ -1,6 +1,7 @@
 package com.termux.shared.activities;
 
 import androidx.annotation.NonNull;
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -77,6 +78,14 @@ public class ReportActivity extends AppCompatActivity {
         AppCompatActivityUtils.setNightMode(this, NightMode.getAppNightMode().getName(), true);
 
         setContentView(R.layout.activity_report);
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                // Remove activity from recents menu on back button press
+                finishAndRemoveTask();
+            }
+        });
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         if (toolbar != null) {
@@ -201,12 +210,6 @@ public class ReportActivity extends AppCompatActivity {
         }
 
         return true;
-    }
-
-    @Override
-    public void onBackPressed() {
-        // Remove activity from recents menu on back button press
-        finishAndRemoveTask();
     }
 
     @Override

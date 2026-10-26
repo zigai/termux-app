@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -64,6 +65,13 @@ public class TextIOActivity extends AppCompatActivity {
         Logger.logVerbose(LOG_TAG, "onCreate");
 
         setContentView(R.layout.activity_text_io);
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                confirm();
+            }
+        });
 
         mTextIOLabel = findViewById(R.id.text_io_label);
         mTextIOLabelSeparator = findViewById(R.id.text_io_label_separator);
@@ -182,7 +190,6 @@ public class TextIOActivity extends AppCompatActivity {
             });
         } else {
             mTextIOTextCharacterUsage.setVisibility(View.GONE);
-            mTextIOText.addTextChangedListener(null);
         }
     }
 
@@ -230,11 +237,6 @@ public class TextIOActivity extends AppCompatActivity {
         }
 
         return false;
-    }
-
-    @Override
-    public void onBackPressed() {
-        confirm();
     }
 
     /** Confirm current text and send it back to calling {@link Activity}. */
