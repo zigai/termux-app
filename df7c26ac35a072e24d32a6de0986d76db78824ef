@@ -1,0 +1,2 @@
+- The final batch tree passes ./gradlew --no-daemon test lint :app:lintCoexistence :app:lintRelease :app:assembleDebug :app:assembleRelease: 533 tests complete with zero failures, errors, or skips, and all three app variants pass lint.
+- Android lint accepts the API 21 text drawing path, and debug/release APKs build for arm64-v8a, armeabi-v7a, x86, and x86_64. API 21 device rendering remains unverified.
