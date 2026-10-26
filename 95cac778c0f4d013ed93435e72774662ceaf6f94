@@ -1,0 +1,3 @@
+- The final batch tree passes ./gradlew --no-daemon test lint :app:lintCoexistence :app:lintRelease :app:assembleDebug :app:assembleRelease: 533 tests complete with zero failures, errors, or skips, and all three app variants pass lint.
+- git check-ignore -v matches the downloaded bootstrap archive, local.properties, generated debug APK, and evidence log to their intended ignore rules; the evidence log uses the global .cache rule.
+- git status --porcelain=v1 -uall is empty after the batch commits; all 90 reviewed files match the checked file hashes.
