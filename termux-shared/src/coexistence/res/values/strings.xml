@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_termux_prefix_dir_path_not_accessible">The Termux Keyboard app $PREFIX directory is not accessible by the %1$s app.
+        This may be because you have not installed or set up Termux Keyboard, or because the apps have different APK signatures.
+        It may also be because the Termux Keyboard $PREFIX directory "/data/data/com.termux.keyboard/files/usr" does not exist or does not have read,
+        write and execute permissions.</string>
+</resources>

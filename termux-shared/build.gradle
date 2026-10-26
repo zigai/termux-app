@@ -36,6 +36,7 @@ android {
         minSdkVersion project.properties.minSdkVersion.toInteger()
         targetSdkVersion project.properties.targetSdkVersion.toInteger()
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "TERMUX_PACKAGE_NAME", '"com.termux"'
         externalNativeBuild {
             ndkBuild {
                 cppFlags ''
@@ -48,6 +49,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        coexistence {
+            initWith debug
+            matchingFallbacks = ['debug']
+            buildConfigField "String", "TERMUX_PACKAGE_NAME", '"com.termux.keyboard"'
+        }
     }
 
     compileOptions {
@@ -56,6 +63,10 @@ android {
 
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        buildConfig true
     }
 
     externalNativeBuild {

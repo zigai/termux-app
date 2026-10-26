@@ -98,6 +98,33 @@ android {
         debug {
             signingConfig signingConfigs.debug
         }
+
+        coexistence {
+            initWith debug
+            applicationIdSuffix ".keyboard"
+            versionNameSuffix "-keyboard"
+            matchingFallbacks = ['debug']
+            signingConfig signingConfigs.debug
+
+            manifestPlaceholders.TERMUX_PACKAGE_NAME = "com.termux.keyboard"
+            manifestPlaceholders.TERMUX_APP_NAME = "Termux Keyboard"
+            manifestPlaceholders.TERMUX_API_APP_NAME = "Termux Keyboard:API"
+            manifestPlaceholders.TERMUX_BOOT_APP_NAME = "Termux Keyboard:Boot"
+            manifestPlaceholders.TERMUX_FLOAT_APP_NAME = "Termux Keyboard:Float"
+            manifestPlaceholders.TERMUX_STYLING_APP_NAME = "Termux Keyboard:Styling"
+            manifestPlaceholders.TERMUX_TASKER_APP_NAME = "Termux Keyboard:Tasker"
+            manifestPlaceholders.TERMUX_WIDGET_APP_NAME = "Termux Keyboard:Widget"
+
+            ndk {
+                abiFilters 'arm64-v8a'
+            }
+
+            externalNativeBuild {
+                ndkBuild {
+                    cFlags "-DTERMUX_COEXISTENCE_BUILD"
+                }
+            }
+        }
     }
 
     compileOptions {
@@ -135,6 +162,9 @@ android {
             if (variant.buildType.name == "debug") {
                 def abi = output.getFilter(com.android.build.OutputFile.ABI)
                 outputFileName = new File("termux-app_" + (apkVersionTag ? apkVersionTag : project.ext.packageVariant + "-" + "debug") + "_" + (abi ? abi : "universal") + ".apk")
+            } else if (variant.buildType.name == "coexistence") {
+                def abi = output.getFilter(com.android.build.OutputFile.ABI)
+                outputFileName = new File("termux-keyboard_" + (apkVersionTag ? apkVersionTag : project.ext.packageVariant + "-" + "coexistence") + "_" + (abi ? abi : "universal") + ".apk")
             } else if (variant.buildType.name == "release") {
                 def abi = output.getFilter(com.android.build.OutputFile.ABI)
                 outputFileName = new File("termux-app_" + (apkVersionTag ? apkVersionTag : project.ext.packageVariant + "-" + "release") + "_" + (abi ? abi : "universal") + ".apk")
@@ -153,6 +183,30 @@ dependencies {
     // Test-only Draft 2020-12 validation; never packaged in the APK.
     testImplementation "com.networknt:json-schema-validator:1.0.87"
     coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:2.1.5"
+}
+
+def coexistenceBootstrapFile = file("src/main/cpp/bootstrap-coexistence-aarch64.zip")
+def verifyCoexistenceBootstrap = tasks.register("verifyCoexistenceBootstrap") {
+    doLast {
+        if (!coexistenceBootstrapFile.isFile() || coexistenceBootstrapFile.length() < 1024 * 1024) {
+            throw new GradleException("Missing aarch64 bootstrap compiled for com.termux.keyboard at " + coexistenceBootstrapFile)
+        }
+    }
+}
+
+tasks.matching {
+    it.name == "assembleCoexistence" ||
+        it.name == "bundleCoexistence" ||
+        it.name == "installCoexistence"
+}.configureEach {
+    dependsOn verifyCoexistenceBootstrap
+}
+
+tasks.matching {
+    it.name.startsWith("configureNdkBuildCoexistence") ||
+        it.name ==~ /configureNdkBuildDebug\[.+\]-\d+/
+}.configureEach {
+    mustRunAfter verifyCoexistenceBootstrap
 }
 
 task versionName {
